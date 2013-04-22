@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MicrosoftExcelCopier.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DefaultFilePath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dd/MM/yyyy</Value>
+    </Setting>
+    <Setting Name="DateColumnNumber" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LabelColumnNumber" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="StockLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">STOCK</Value>
+    </Setting>
+    <Setting Name="Culture" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="StockVNLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">STOCK VN</Value>
+    </Setting>
+    <Setting Name="StockTQLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">STOCK TQ</Value>
+    </Setting>
+    <Setting Name="OpeningLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OPENING</Value>
+    </Setting>
+    <Setting Name="OpeningVNLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OPENING VN</Value>
+    </Setting>
+    <Setting Name="OpeningTQLabel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OPENING TQ</Value>
+    </Setting>
+    <Setting Name="Excel972003Extension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.xls</Value>
+    </Setting>
+    <Setting Name="Excel2007OverExtension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.xlsx</Value>
+    </Setting>
+    <Setting Name="TempFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.\Temp.xls</Value>
+    </Setting>
+    <Setting Name="Preview" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NewMonthTempFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">.\Temp_New.xls</Value>
+    </Setting>
+    <Setting Name="SUMFormula" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SUM</Value>
+    </Setting>
+    <Setting Name="StartFormulaSymbol" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">=</Value>
+    </Setting>
+    <Setting Name="NumberOfLetter" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">26</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

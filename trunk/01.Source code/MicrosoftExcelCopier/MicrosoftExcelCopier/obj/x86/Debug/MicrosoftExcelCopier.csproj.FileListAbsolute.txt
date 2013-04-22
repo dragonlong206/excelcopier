@@ -1,0 +1,16 @@
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\MicrosoftExcelCopier.exe
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\MicrosoftExcelCopier.pdb
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\Ionic.Zip.dll
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\NPOI.dll
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\NPOI.xml
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\MicrosoftExcelCopier.frmMain.resources
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\MicrosoftExcelCopier.Properties.Resources.resources
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\MicrosoftExcelCopier.exe
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\MicrosoftExcelCopier.pdb
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\MicrosoftExcelCopier.exe.config
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\ExcelViewer.dll
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\obj\x86\Debug\MicrosoftExcelCopier.vi-VN.resources
+E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\log4net.dll
