@@ -1,0 +1,123 @@
+2013-03-15 23:44:56,037 [1] ERROR MAINLogger [(null)] - Cannot open file: D:\My Document\Mo May\MAR\Test.xls
+System.IO.IOException: The process cannot access the file 'D:\My Document\Mo May\MAR\Test.xls' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 137
+2013-03-15 23:45:55,516 [10] ERROR MAINLogger [(null)] - Cannot open file: D:\My Document\Mo May\MAR\Test.xls
+System.IO.IOException: The process cannot access the file 'D:\My Document\Mo May\MAR\Test.xls' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 137
+2013-03-15 23:55:14,410 [1] ERROR MAINLogger [(null)] - Exception: 
+System.InvalidCastException: Unable to cast object of type '<SelectManyIterator>d__14`2[NPOI.SS.UserModel.ISheet,System.Char]' to type 'System.Collections.Generic.IEnumerable`1[System.String]'.
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 201
+2013-03-16 15:50:16,612 [1] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.GetData(ISheet sheet, CellRangeAddress region, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 159
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 307
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 200
+2013-03-16 17:49:27,482 [1] ERROR MAINLogger [(null)] - Không th? t?o t?p tin cho tháng m?i.
+System.InvalidCastException: Specified cast is not valid.
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 281
+2013-03-16 17:52:57,985 [1] ERROR MAINLogger [(null)] - Không th? t?o t?p tin cho tháng m?i.
+System.InvalidOperationException: Stack empty.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Collections.Generic.Stack`1.Pop()
+   at NPOI.SS.Formula.WorkbookEvaluator.EvaluateFormula(OperationEvaluationContext ec, Ptg[] ptgs)
+   at NPOI.SS.Formula.WorkbookEvaluator.EvaluateAny(IEvaluationCell srcCell, Int32 sheetIndex, Int32 rowIndex, Int32 columnIndex, EvaluationTracker tracker)
+   at NPOI.SS.Formula.WorkbookEvaluator.Evaluate(IEvaluationCell srcCell)
+   at NPOI.HSSF.UserModel.HSSFFormulaEvaluator.EvaluateFormulaCellValue(ICell cell)
+   at NPOI.HSSF.UserModel.HSSFFormulaEvaluator.EvaluateFormulaCell(ICell cell)
+   at NPOI.HSSF.UserModel.HSSFFormulaEvaluator.EvaluateAllFormulaCells(IWorkbook wb, IFormulaEvaluator evaluator)
+   at NPOI.HSSF.UserModel.HSSFFormulaEvaluator.EvaluateAllFormulaCells(IWorkbook wb)
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 321
+2013-03-16 18:03:28,794 [1] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.ArgumentException: This Style does not belong to the supplied Workbook. Are you trying to assign a style from one workbook to the cell of a differnt workbook?
+   at NPOI.HSSF.UserModel.HSSFCellStyle.VerifyBelongsToWorkbook(HSSFWorkbook wb)
+   at NPOI.HSSF.UserModel.HSSFCell.set_CellStyle(ICellStyle value)
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 304
+2013-03-16 18:03:53,625 [1] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.ArgumentException: This Style does not belong to the supplied Workbook. Are you trying to assign a style from one workbook to the cell of a differnt workbook?
+   at NPOI.HSSF.UserModel.HSSFCellStyle.VerifyBelongsToWorkbook(HSSFWorkbook wb)
+   at NPOI.HSSF.UserModel.HSSFCell.set_CellStyle(ICellStyle value)
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 304
+2013-03-16 18:48:14,437 [1] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.ValueCollection.Enumerator.MoveNext()
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 270
+2013-03-16 18:50:32,950 [9] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Collections.Generic.Dictionary`2.ValueCollection.Enumerator.MoveNext()
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 270
+2013-03-16 22:46:23,326 [8] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.IO.IOException: The process cannot access the file 'E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\NewMonthTemp.xls' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.Open(String path, FileMode mode)
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 247
+2013-03-16 23:16:33,511 [1] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.InvalidOperationException: The maximum number of cell styles was exceeded. You can define up to 4000 styles in a .xls workbook
+   at NPOI.HSSF.UserModel.HSSFWorkbook.CreateCellStyle()
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 354
+2013-03-16 23:42:06,702 [1] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.FindMergedRegion(ISheet sheet, String value) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 115
+   at MicrosoftExcelCopier.frmMain.PasteToOneDate(String toDate, ISheet sheet, List`1 copyData, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 330
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sourceSheet, ISheet destSheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 362
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 255
+2013-03-16 23:47:41,388 [10] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.FindMergedRegion(ISheet sheet, String value) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 115
+   at MicrosoftExcelCopier.frmMain.PasteToOneDate(String toDate, ISheet sheet, List`1 copyData, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 330
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sourceSheet, ISheet destSheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 362
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 255
+2013-03-16 23:50:07,142 [10] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.FindMergedRegion(ISheet sheet, String value) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 115
+   at MicrosoftExcelCopier.frmMain.PasteToOneDate(String toDate, ISheet sheet, List`1 copyData, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 330
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sourceSheet, ISheet destSheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 362
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 255
+2013-03-16 23:55:08,284 [10] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.FindMergedRegion(ISheet sheet, String value) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 115
+   at MicrosoftExcelCopier.frmMain.PasteToOneDate(String toDate, ISheet sheet, List`1 copyData, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 330
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sourceSheet, ISheet destSheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 362
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 255
+2013-03-16 23:56:56,226 [8] ERROR MAINLogger [(null)] - Khong the tao tap tin cho thang moi
+System.IO.IOException: The process cannot access the file 'E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\bin\Debug\Temp_New.xls' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.IO.File.Open(String path, FileMode mode)
+   at MicrosoftExcelCopier.ExcelUtils.CopyFile(IWorkbook workbook, String filePath, DateTime fromDate, DateTime toDate) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 247
+2013-03-17 00:01:09,091 [1] ERROR MAINLogger [(null)] - Exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at MicrosoftExcelCopier.ExcelUtils.FindMergedRegion(ISheet sheet, String value) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\ExcelUtils.cs:line 115
+   at MicrosoftExcelCopier.frmMain.PasteToOneDate(String toDate, ISheet sheet, List`1 copyData, StockType stockType) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 330
+   at MicrosoftExcelCopier.frmMain.CopyAndPasteAllDates(ISheet sourceSheet, ISheet destSheet, StockType stockType, CellRangeAddress fromDateRegion, String toDate1Formatted, String toDate2Formatted, String toDate3Formatted, String toDate4Formatted) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 362
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 255
+2013-03-17 00:43:54,240 [1] ERROR MAINLogger [(null)] - Cannot open file: D:\My Document\Mo May\MAR\Test.xls
+System.IO.IOException: The process cannot access the file 'D:\My Document\Mo May\MAR\Test.xls' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path)
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 195
+2013-03-17 00:49:11,178 [1] ERROR MAINLogger [(null)] - Exception: 
+System.Runtime.InteropServices.COMException (0x800A03EC): '.\Temp.xls' could not be found. Check the spelling of the file name, and verify that the file location is correct.
+
+If you are trying to open the file from your list of most recently used files, make sure that the file has not been renamed, moved, or deleted.
+   at Microsoft.Office.Interop.Excel.Workbooks.Open(String Filename, Object UpdateLinks, Object ReadOnly, Object Format, Object Password, Object WriteResPassword, Object IgnoreReadOnlyRecommended, Object Origin, Object Delimiter, Object Editable, Object Notify, Object Converter, Object AddToMru, Object Local, Object CorruptLoad)
+   at ExcelViewer.ExcelViewer.OpenFile(String filename)
+   at MicrosoftExcelCopier.frmMain.ShowPreview(String filePath) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 113
+   at MicrosoftExcelCopier.frmMain.btnCopy_Click(Object sender, EventArgs e) in E:\My Projects\MicrosoftExcelCopier\MicrosoftExcelCopier\MainForm.cs:line 282
