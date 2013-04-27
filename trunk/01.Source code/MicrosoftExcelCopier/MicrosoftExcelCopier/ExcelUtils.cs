@@ -129,14 +129,20 @@ namespace MicrosoftExcelCopier
                     for (int j = region.FirstRow; j <= region.LastRow; j++)
                     {
                         IRow row = sheet.GetRow(j);
-                        int numberOfColumn = region.LastColumn - region.FirstColumn + 1;
-                        for (int k = 0; k < numberOfColumn; k++)
+                        if (row != null)
                         {
-                            ICell cell = row.Cells[k];
-                            object cellValue = GetCellValue(cell, formulaEvaluator);
-                            if (value.Equals(cellValue))
+                            int numberOfColumn = region.LastColumn - region.FirstColumn + 1;
+                            for (int k = 0; k < numberOfColumn; k++)
                             {
-                                return region;
+                                ICell cell = row.Cells[k];
+                                if (cell != null)
+                                {
+                                    object cellValue = GetCellValue(cell, formulaEvaluator);
+                                    if (value.Equals(cellValue))
+                                    {
+                                        return region;
+                                    }
+                                }
                             }
                         }
                     }
@@ -321,7 +327,7 @@ namespace MicrosoftExcelCopier
                         HSSFFormulaEvaluator formulaEvaluator = new HSSFFormulaEvaluator(tempWorkbook);
                         #region Copy and clear all data
                         DateTime oldDate;
-                        bool hasRedudantRow = false; ; // Flag to know redudant row if new month has less day then old month
+                        bool hasRedudantRow = false; ; // Flag to know redudant row
                         int redudantRowIndex = -1;
                         foreach (ISheet sheet in tempWorkbook)
                         {
@@ -409,67 +415,68 @@ namespace MicrosoftExcelCopier
                         }
                         #endregion
 
-                        #region Insert new row if to month has more day then from month
-                        if (daysInFromMonth < daysInToMonth)
-                        {
-                            DateTime lastDateOfMonth = fromDate.GetLastDayOfMonth().AddMonths(monthDistance);
-                            DateTime currentDate;
-                            foreach (ISheet sheet in tempWorkbook)
-                            {
-                                currentDate = lastDateOfMonth.AddDays(1);
-                                CellRangeAddress lastDateRegion = sheet.FindMergedRegion(lastDateOfMonth.ToString(Properties.Settings.Default.DateFormat));
-                                if (lastDateRegion != null)
-                                {
-                                    int numberOfRegionRow = lastDateRegion.LastRow - lastDateRegion.FirstRow + 1; // 0-based
-                                    int dayDistance = daysInToMonth - daysInFromMonth;
-                                    for (int i = 0; i < dayDistance; i++)
-                                    {
-                                        int lastRow = sheet.LastRowNum + 1;
-                                        for (int j = 0; j < numberOfRegionRow; j++)
-                                        {
-                                            IRow row = sheet.CreateRow(lastRow + j);
-                                            IRow sourceRow = sheet.GetRow(lastDateRegion.FirstRow + j);
-                                            int colNum = 0;
-                                            foreach (ICell cell in sourceRow)
-                                            {
-                                                ICell newCell = row.CreateCell(colNum, cell.CellType);
-                                                newCell.CellStyle = cell.CellStyle;
+                        //#region Insert new row if to month has more day then from month
+                        //if (daysInFromMonth < daysInToMonth)
+                        //{
+                        //    DateTime lastDateOfMonth = fromDate.GetLastDayOfMonth().AddMonths(monthDistance);
+                        //    DateTime currentDate;
+                        //    foreach (ISheet sheet in tempWorkbook)
+                        //    {
+                        //        currentDate = lastDateOfMonth.AddDays(1);
+                        //        CellRangeAddress lastDateRegion = sheet.FindMergedRegion(lastDateOfMonth.ToString(Properties.Settings.Default.DateFormat));
+                        //        if (lastDateRegion != null)
+                        //        {
+                        //            int numberOfRegionRow = lastDateRegion.LastRow - lastDateRegion.FirstRow + 1; // 0-based
+                        //            int dayDistance = daysInToMonth - daysInFromMonth;
+                        //            for (int i = 0; i < dayDistance; i++)
+                        //            {
+                        //                int lastRow = sheet.LastRowNum + 1;
+                        //                for (int j = 0; j < numberOfRegionRow; j++)
+                        //                {
+                        //                    IRow row = sheet.CreateRow(lastRow + j);
+                        //                    IRow sourceRow = sheet.GetRow(lastDateRegion.FirstRow + j);
+                        //                    int colNum = 0;
+                        //                    foreach (ICell cell in sourceRow)
+                        //                    {
+                        //                        ICell newCell = row.CreateCell(colNum, cell.CellType);
+                        //                        newCell.CellStyle = cell.CellStyle;
 
-                                                switch (cell.CellType)
-                                                {
-                                                    case CellType.FORMULA:
-                                                        newCell.CellFormula = cell.CellFormula;
-                                                        break;
-                                                    case CellType.NUMERIC:
-                                                        if (DateUtil.IsCellDateFormatted(cell))
-                                                        {
-                                                            newCell.SetCellValue(currentDate);
-                                                        }
-                                                        else
-                                                        {
-                                                            newCell.SetCellValue(cell.NumericCellValue);
-                                                        }
-                                                        break;
-                                                    case CellType.STRING:
-                                                        newCell.SetCellValue(cell.StringCellValue);
-                                                        break;
-                                                    default:
-                                                        break;
-                                                }
+                        //                        switch (cell.CellType)
+                        //                        {
+                        //                            case CellType.FORMULA:
+                        //                                // TODO: replace relative row address in formula. Ex: I3 --> I7
+                        //                                newCell.CellFormula = cell.CellFormula;
+                        //                                break;
+                        //                            case CellType.NUMERIC:
+                        //                                if (DateUtil.IsCellDateFormatted(cell))
+                        //                                {
+                        //                                    newCell.SetCellValue(currentDate);
+                        //                                }
+                        //                                else
+                        //                                {
+                        //                                    newCell.SetCellValue(cell.NumericCellValue);
+                        //                                }
+                        //                                break;
+                        //                            case CellType.STRING:
+                        //                                newCell.SetCellValue(cell.StringCellValue);
+                        //                                break;
+                        //                            default:
+                        //                                break;
+                        //                        }
 
-                                                colNum++;
-                                            }
+                        //                        colNum++;
+                        //                    }
 
-                                            CellRangeAddress newMergedRegion = new CellRangeAddress(lastRow, lastRow + numberOfRegionRow - 1, lastDateRegion.FirstColumn, lastDateRegion.LastColumn);
-                                            sheet.AddMergedRegion(newMergedRegion);
-                                        }
+                        //                    CellRangeAddress newMergedRegion = new CellRangeAddress(lastRow, lastRow + numberOfRegionRow - 1, lastDateRegion.FirstColumn, lastDateRegion.LastColumn);
+                        //                    sheet.AddMergedRegion(newMergedRegion);
+                        //                }
 
-                                        currentDate = currentDate.AddDays(1);
-                                    }
-                                }
-                            }
-                        }
-                        #endregion
+                        //                currentDate = currentDate.AddDays(1);
+                        //            }
+                        //        }
+                        //    }
+                        //}
+                        //#endregion
 
                         // Re-calculate all formulas
                         HSSFFormulaEvaluator.EvaluateAllFormulaCells(tempWorkbook);

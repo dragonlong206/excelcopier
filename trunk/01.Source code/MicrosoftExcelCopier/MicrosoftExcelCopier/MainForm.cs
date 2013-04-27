@@ -176,10 +176,11 @@ namespace MicrosoftExcelCopier
         {
             this.Cursor = Cursors.WaitCursor;
 
-            ecvPreviewer.CloseExcel();
+            this.ecvPreviewer.CloseExcel();
 
             if (!string.IsNullOrEmpty(sourceFile))
             {
+                #region Pre-processing datetime
                 DateTime fromDate = dtpFromDate.Value;
                 string fromDateFormatted = fromDate.ToString(Properties.Settings.Default.DateFormat);
                 LogServices.WriteDebug(string.Format("Copy data from {0}", fromDateFormatted));
@@ -229,6 +230,8 @@ namespace MicrosoftExcelCopier
                     isSameMonth = false;
                     //LogServices.WriteDebug("Different month");
                 }
+                #endregion
+
                 try
                 {
                     // Flag to know there are data of selected date or not
@@ -240,7 +243,6 @@ namespace MicrosoftExcelCopier
                         //LogServices.WriteDebug(string.Format("Start openning file: {0}", sourceFile));
 
                         workbook = new HSSFWorkbook(new POIFSFileSystem(input.BaseStream));
-                        destWorkbook = workbook;
                         if (null == workbook)
                         {
                             LogServices.WriteError(string.Format("Cannot open file: {0}", sourceFile));
@@ -271,6 +273,10 @@ namespace MicrosoftExcelCopier
                                 destWorkbook = new HSSFWorkbook(destStream);
                             }
                         }
+                        else
+                        {
+                            destWorkbook = workbook;
+                        }
 
                         foreach (ISheet sheet in workbook)
                         {
@@ -300,6 +306,7 @@ namespace MicrosoftExcelCopier
                         }
                     }
 
+                    #region Post-prcessing
                     // All sheet do not have data
                     if (dataNotFoundSheet.Count == workbook.NumberOfSheets)
                     {
@@ -335,6 +342,7 @@ namespace MicrosoftExcelCopier
                         this.isCopySuccess = true;
                         //LogServices.WriteDebug(string.Format("Closing file: {0}", sourceFile));
                     }
+                    #endregion
                 }
                 catch (IOException ioEx)
                 {
