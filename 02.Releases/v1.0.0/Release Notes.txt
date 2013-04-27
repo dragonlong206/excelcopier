@@ -1,7 +1,0 @@
-Excel Copier v1.0.0
-
-Main functions:
-1. Copy data from one day to one (or many - maximum 4) day(s).
-2. Create new file if destination day is in new month.
-3. Preview excel file. Has options to turn on/off.
-4. Logging.
